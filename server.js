@@ -20,7 +20,7 @@ const PORT =process.env.PORT || 4040;
 // init Route
 
 
-app.use(pageRoute);
+
 
 
 // Data Manage
@@ -34,12 +34,8 @@ app.use(express.urlencoded({extended:false}));
 app.use('/public',express.static('public'))
 
 // routing
+app.use( pageRoute);
 
-
-app.get('/',(req,res)=>{
-
-    res.status(200).sendFile(path.join(__dirname,'./public/index.html'))
-})
 
 
 // server listen
